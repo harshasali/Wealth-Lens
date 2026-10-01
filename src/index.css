@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0e0b1f;
+  --bg-2: #15112c;
+  --ink: #f5f1e8;
+  --muted: #a39ec0;
+  --amber: #f5b84a;
+  --indigo: #7d6cf0;
+  --teal: #4dd4c6;
+  --rose: #ef6b7e;
+}
+
+html, body, #root { min-height: 100%; }
+body {
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(125,108,240,0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(245,184,74,0.10), transparent 60%),
+    linear-gradient(180deg, #0e0b1f 0%, #0a0817 100%);
+  color: var(--ink);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.serif { font-family: "Fraunces", "Iowan Old Style", Georgia, serif; letter-spacing: -0.01em; }
+
+.field {
+  @apply rounded-xl px-3 py-2 text-sm w-full transition-colors;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: var(--ink);
+}
+.field:focus { outline: none; border-color: var(--amber); background: rgba(255,255,255,0.06); }
+.label { @apply text-[11px] uppercase tracking-[0.18em] mb-1.5 block; color: var(--muted); }
+
+.btn { @apply px-4 py-2 rounded-full text-sm font-medium transition-all; }
+.btn-primary { @apply btn; background: var(--amber); color: #2a1d00; }
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-ghost { @apply btn; border: 1px solid rgba(255,255,255,0.18); color: var(--ink); }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.45); }
+.btn-danger { @apply btn; border: 1px solid rgba(239,107,126,0.35); color: #ffb3bd; background: transparent; }
+.btn-danger:hover { background: rgba(239,107,126,0.10); }
+
+.panel {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 22px;
+}
+.panel-soft {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+}
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+  color: var(--muted);
+}
+.dot { width: 6px; height: 6px; border-radius: 999px; }
+
+.divider-soft { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); }
